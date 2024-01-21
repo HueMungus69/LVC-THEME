@@ -1,0 +1,764 @@
+{% liquid
+    assign pt = section.settings.pt | prepend: 'pt-5 pt-sm-'
+    assign pb = section.settings.pb | prepend: 'pb-'
+
+    assign current_variant = product.selected_or_first_available_variant
+%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  .h1, .h2, .h3, .h4, .h5, .h6 #text {
+    transform: scaleY(0.95) !important;
+
+.product-options list-unstyled mb-6{
+  diaplsy:none!important;
+}
+  .product-content
+  {padding-top: 1rem !important;
+  }
+    .container {
+      margin-top: 0rem!important;
+      padding-top:0rem!important;
+    }
+}
+  }
+</style>
+<a class="visually-hidden-focusable" href="#product-content">
+    {{ 'general.accessibility.skip_product_content' | t }}
+</a>
+
+<section 
+    id="product-template" 
+    class="{{ pt }} {{ pb }}"
+    data-product-handle="{{ product.handle }}">
+    <div class="container">
+        {% if section.settings.show_breadcrumbs and section.settings.breadcrumb_position == 'top' %}
+            <div class="breadcrumbs-wrapper mb-6" style="font-size:0.55rem;margin-top:0rem;">
+                {% render 'breadcrumbs' %}
+            </div>
+        {% endif %}
+        
+                             <h1 class="title mb-3 {{ section.settings.title_size }}"style="margin-bottom: 0rem!important; font-size:1.5rem;text-transform:capitalize!important;">
+                        {{ product.title }}
+                    </h1>
+
+    
+
+      
+<div class="rating-container2">
+  <div class="c-rate">
+    <img class="star-icon active" src="https://cdn.shopify.com/s/files/1/0834/0596/3575/files/star_480x480.png?v=1705760072" alt="Star">
+    <img class="star-icon active" src="https://cdn.shopify.com/s/files/1/0834/0596/3575/files/star_480x480.png?v=1705760072" alt="Star">
+    <img class="star-icon active" src="https://cdn.shopify.com/s/files/1/0834/0596/3575/files/star_480x480.png?v=1705760072" alt="Star">
+    <img class="star-icon active" src="https://cdn.shopify.com/s/files/1/0834/0596/3575/files/star_480x480.png?v=1705760072" alt="Star">
+    <img class="star-icon" src="https://cdn.shopify.com/s/files/1/0834/0596/3575/files/star_480x480.png?v=1705760072" alt="Star">
+
+
+
+<!-- Apply the "span" class to your <span> element -->
+<span class="span">(291)</span>
+      </div>
+</div>
+<style>
+  .rating-container {
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+    border-radius: 5rem;
+    margin-top: 0.1rem;
+
+  }
+.span{
+font-size:1.1rem; 
+  padding-left: 0.2rem;
+}
+
+  .star-icon {
+    width: 1rem;
+    height: 1rem;
+    filter: grayscale(1);
+    display: block;
+  }
+
+  .star-icon.active {
+    filter: none;
+  }
+
+  .c-rate {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+
+    .rating-container {
+    padding-top: 0.1rem;
+    paddint-bottom: 0.1rem;
+    display: inline-block; /* Add this line to make the container inline */
+  }
+</style>
+
+
+
+<style>
+  #countdown {
+    display: inline; /* Display inline to flow with the text */
+  }
+
+  #countdown b {
+    font-weight: normal; /* Make bold text normal weight */
+  }
+
+  .bold-date {
+    font-weight: bold; /* Make the day and month bold */
+  }
+</style>
+
+<div class="pricecont2"style="font-size:0.9rem;padding:0px;">
+              <span style="color:var(--bs-danger);font-size:1rem">USD</span>
+ <span style="color:var(--bs-danger);font-size:1.5rem">$0</span>
+        <span style="color:gray;padding:0rem">was</span>
+<div id="price2" class="product-price-final" style="display:inline-block;font-family: var(--bs-headings-font-family); transform:!important; font-size: 0.9rem; font-weight: 100 !important; padding-top: 0rem !important; margin-top: 0rem !important; margin-bottom: 0rem !important; text-decoration: line-through;">
+    {{ current_variant.price | money }}
+    </div>
+ 
+ <style>
+   
+  .pricecont2 {
+
+    margin-top: -0.4rem;
+    mragin-bottom: -0rem;
+ flex: stretch;
+    padding-top: 0px !important;
+      padding-bottom: 0px !important;
+  }
+
+</style>
+
+
+
+</div>
+      
+      
+<p id="arrivalDate" class="text-body fs-8 mb-0" style="color: #D3B1C2; line-height:0.7">
+  Estimated Arrival <span class="bold-date">Date:</span> <i class="fas fa-paper-plane" style="color: #D3B1C2;"></i><span id="countdown"><b>Order within <span id="hours"></span> hrs <span id="minutes"></span> mins .</b></span>
+</p>
+<p>Order within: <span id="hours"style="font-weight:800"></span> <b>hrs</b> <span id="minutes"style="font-weight:800"></span> <b>mins</b>.</p>
+
+<script>
+  function calculateArrivalDate() {
+    var today = new Date();
+    var minDays = 5;
+    var arrivalDate = new Date(today);
+    arrivalDate.setDate(today.getDate() + minDays);
+
+    // Format the day, month, and year separately for styling
+    var day = `<span class="bold-date">${arrivalDate.getDate()}</span>`;
+    var month = `<span class="bold-date">${arrivalDate.toLocaleString('en-US', { month: 'long' })}</span>`;
+    
+    var formattedArrivalDate = `${month} ${day}, ${arrivalDate.getFullYear()}`;
+    
+    var arrivalDateElement = document.getElementById("arrivalDate");
+    arrivalDateElement.innerHTML = `Estimated Arrival <span class="bold-date">Date:</span> ${formattedArrivalDate} <i class="fas fa-paper-plane" style="color: #D3B1C2;"></i>`;
+  }
+
+  function updateCountdown() {
+    var now = new Date();
+    var target = new Date();
+    target.setHours(23, 0, 0, 0); // Set the target time to 11 PM
+    
+    // If it's past 11 PM, set the target time to 11 PM tomorrow
+    if (now > target) {
+        target.setDate(target.getDate() + 1);
+    }
+    
+    var timeDifference = target - now;
+    
+    // Calculate hours and minutes
+    var hours = Math.floor(timeDifference / (1000 * 60 * 60));
+    var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    
+    // Display the countdown
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+  }
+
+  // Update the arrival date and countdown immediately
+  calculateArrivalDate();
+  updateCountdown();
+
+  // Update the countdown every minute
+  setInterval(updateCountdown, 60000);
+</script>
+        
+
+      <p id="arrivalDate" class="text-body fs-8 mb-0" style="margin-top: 0rem; font-size: 0.85rem;font-weight:100;">
+<span style="color:var(--bs-danger)!important;"> <!-- Wrap the text in a span and apply the color style -->
+<script>
+function calculateArrivalDate() {
+var today = new Date();
+var minDays = 1;
+var maxDays = 1;
+var estimatedArrival = new Date(today);
+estimatedArrival.setDate(today.getDate() + Math.floor(Math.random() * (maxDays - minDays + 1)) + minDays);
+
+var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+var formattedArrivalDate = estimatedArrival.toLocaleDateString('en-US', options);
+
+var arrivalDateElement = document.getElementById("arrivalDate");
+arrivalDateElement.innerHTML = `Estimated Arrival Date: <span style="color:var(--bs-primary);font-weight:700!important;text-decoration:underline;">${formattedArrivalDate}</span> <i class="fas fa-paper-plane" style="color:var(--bs-danger)"></i>`;
+}
+
+calculateArrivalDate();
+</script>
+</span>
+</p>
+      
+
+            
+        <div class="row">
+          
+            <div class="col-lg-6">
+                {% render 'product-gallery' %}
+            </div>
+            <div class="col-lg-6">
+              
+                <div id="product-content" class="product-content">
+                    {% if section.settings.show_vendor and product.vendor %}
+                        <p class="product-vendor text-muted my-1 text-uppercase">
+                            {{ product.vendor }}
+                        </p>
+                    {% endif %}
+                    
+                   
+
+                    {% if section.settings.show_sku %}
+                        <p 
+                            class="current-variant-sku mt-n3 text-muted mb-3 text-uppercase small"
+                            {% if current_variant.sku == blank %}hidden{% endif %}>
+                            {{ current_variant.sku }}
+                        </p>
+                    {% endif %}
+
+                    {% render 'product-rating-badge', product: product %}
+                    
+                    {% if product.metafields.descriptors.subtitle %}
+                        <p class="subtitle text-muted mb-4">
+                            {{ product.metafields.descriptors.subtitle }}
+                        </p>
+                    {% endif %}
+                    
+                    <p class="product-price fs-4 mb-5"style="display:none;">
+                        {% if current_variant.compare_at_price > current_variant.price %}
+                            <span class="product-price-compare text-muted me-3">
+                                <span class="visually-hidden">
+                                    {{ 'product.price_regular' | t }} &nbsp;
+                                </span>
+                                <s>{{ current_variant.compare_at_price | money }}</s>
+                            </span>
+                            <span class="product-price-final">
+                                <span class="visually-hidden">
+                                    {{ 'product.price_sale' | t }} &nbsp;
+                                </span>
+                                {{ current_variant.price | money }}
+                            </span>
+                        {% else %}
+                            <span class="product-price-final">
+                                {{ current_variant.price | money }}
+                            </span>
+                        {% endif %}
+                        {% if current_variant.available and current_variant.compare_at_price > current_variant.price %}
+                            <span class="price-badge-sale badge">
+                                {{ 'product.save' | t }} {{ current_variant.compare_at_price | minus: current_variant.price | times: 100 | divided_by: current_variant.compare_at_price | round | append: '%' }}
+                            </span>    
+                        {% endif %}
+                        {% unless current_variant.available %}
+                            <span class="price-badge-sold-out badge">
+                                {{ 'product.sold_out' | t }}
+                            </span>        
+                        {% endunless %}
+                    </p>
+
+                   {% form 'product', product %}
+    {{ form | payment_terms }}
+{% endform %}
+
+{% render 'custom-block-test' %}
+
+<div class="d-flex justify-content-between align-items-center"> <!-- Added the missing quote here -->
+    {% if section.settings.show_breadcrumbs and section.settings.breadcrumb_position == 'bottom' %}
+        <div class="breadcrumbs-wrapper me-6">
+            {% render 'breadcrumbs' %}
+        </div>
+    {% endif %}
+                       
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+      </div>
+  
+</section>
+    </div>
+
+
+{% schema %}
+
+
+{
+    "name": "Product (template)",
+    "settings": [
+        {
+            "type": "header",
+            "content": "General"
+        },
+        {
+            "type": "select",
+            "id": "title_size",
+            "label": "Title Size",
+            "default": "h2",
+            "options": [
+                { "group": "Heading", "value": "h1", "label": "H1" },
+                { "group": "Heading", "value": "h2", "label": "H2" },
+                { "group": "Heading", "value": "h3", "label": "H3" },
+                { "group": "Heading", "value": "h4", "label": "H4" },
+                { "group": "Heading", "value": "h5", "label": "H5" },
+                { "group": "Heading", "value": "h6", "label": "H6" }
+            ]
+        },
+        {
+            "type": "checkbox",
+            "id": "show_vendor",
+            "label": "Show vendor",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "show_sku",
+            "label": "Show SKU",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "show_breadcrumbs",
+            "label": "Show Breacrumb",
+            "default": true
+        },
+        {
+            "type": "select",
+            "id": "breadcrumb_position",
+            "label": "Breacrumb position",
+            "default": "bottom",
+            "options": [
+                { "value": "top", "label": "Top" },
+                { "value": "bottom", "label": "Bottom" }
+            ]
+        },
+        {
+            "type": "checkbox",
+            "id": "show_share_btn",
+            "label": "Show Share button",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Gallery"
+        },
+        {
+            "type": "select",
+            "id": "gallery_img_orientation",
+            "label": "Image orientation",
+            "default": "potrait",
+            "options": [
+                { "value": "square", "label": "Square" },
+                { "value": "landscape", "label": "Landscape" },
+                { "value": "potrait", "label": "Potrait" }
+            ]
+        },
+        {
+            "type": "select",
+            "id": "gallery_img_thumbnail",
+            "label": "Image thumbnail",
+            "default": "img-thumbnail",
+            "options": [
+                { "value": "", "label": "None" },
+                { "value": "img-thumbnail", "label": "Thumbnail" }
+            ]
+        },
+        {
+            "type": "checkbox",
+            "id": "gallery_show_thumbnails_mobile",
+            "label": "Show thumb images on mobile",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "gallery_enable_lightbox",
+            "label": "Enable lightbox mode (full-screen)",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Form"
+        },
+        {
+            "type": "checkbox",
+            "id": "form_light_bg",
+            "label": "Light bg color",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "form_show_qty_field",
+            "label": "Show quantity field",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "form_show_buy_btn",
+            "label": "Show Buy button",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "form_show_dynamic_buttons",
+            "label": "Show dynamic buttons",
+            "default": false
+        },
+        {
+            "type": "header",
+            "content": "Spacing"
+        },
+        {
+            "type": "range",
+            "id": "pt",
+            "label": "Padding top",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 10
+        },
+        {
+            "type": "range",
+            "id": "pb",
+            "label": "Padding bottom",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 10
+        },
+        {
+            "type": "range",
+            "id": "mt",
+            "label": "Margin top",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "mb",
+            "label": "Margin bottom",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 0
+        }
+    ],
+    "blocks": [
+        {
+            "type": "product_description",
+            "name": "Product description",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title",
+                    "default": "Details"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "within_accordion",
+                    "label": "Show within accordion",
+                    "info": "If disabled it will show above the accordion blocks",
+                    "default": true
+                },
+                {
+                    "type": "html",
+                    "id": "accordion_icon",
+                    "label": "Icon within accordion",
+                    "info": "You may get svg icons from libraries like [Bootstrap Icons](https://icons.getbootstrap.com)"
+                }
+            ]
+        },
+        {
+            "type": "richtext",
+            "name": "Richtext",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title",
+                    "default": "Rich text"
+                },
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": "Description"
+                },
+                {
+                    "type": "html",
+                    "id": "accordion_icon",
+                    "label": "Icon within accordion",
+                    "info": "You may get svg icons from libraries like [Bootstrap Icons](https://icons.getbootstrap.com)"
+                }
+            ]
+        },
+        {
+            "type": "trust_badges",
+            "name": "Trust badges",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "label",
+                    "label": "Label",
+                    "default": "Trust badges list",
+                    "info": "Used for accessibility purposes"
+                },
+                {
+                    "type": "text",
+                    "id": "max_width",
+                    "label": "Max-width (px)",
+                    "default": "400"
+                },
+                {
+                    "type": "select",
+                    "id": "col_size",
+                    "label": "Column width",
+                    "options": [
+                        { "value": "col-3", "label": "25%" },
+                        { "value": "col-4", "label": "33%" },
+                        { "value": "col-6", "label": "50%" },
+                        { "value": "col-12", "label": "100%" }
+                    ],
+                    "default": "col-4"
+                },
+                {
+                    "type": "header",
+                    "content": "item 1"
+                },
+                {
+                    "type": "html",
+                    "id": "icon_1",
+                    "label": "Icon 1 (svg)",
+                    "info": "You may get svg icons from libraries like [Bootstrap Icons](https://icons.getbootstrap.com)"
+                },
+                {
+                    "type": "html",
+                    "id": "text_1",
+                    "label": "Test 1"
+                },
+                {
+                    "type": "header",
+                    "content": "item 2"
+                },
+                {
+                    "type": "html",
+                    "id": "icon_2",
+                    "label": "Icon 2 (svg)",
+                    "info": "You may get svg icons from libraries like [Bootstrap Icons](https://icons.getbootstrap.com)"
+                },
+                {
+                    "type": "html",
+                    "id": "text_2",
+                    "label": "Test 2"
+                },
+                {
+                    "type": "header",
+                    "content": "item 3"
+                },
+                {
+                    "type": "html",
+                    "id": "icon_3",
+                    "label": "Icon 3 (svg)",
+                    "info": "You may get svg icons from libraries like [Bootstrap Icons](https://icons.getbootstrap.com)"
+                },
+                {
+                    "type": "html",
+                    "id": "text_3",
+                    "label": "Test 3"
+                },
+                {
+                    "type": "header",
+                    "content": "item 4"
+                },
+                {
+                    "type": "html",
+                    "id": "icon_4",
+                    "label": "Icon 4 (svg)",
+                    "info": "You may get svg icons from libraries like [Bootstrap Icons](https://icons.getbootstrap.com)"
+                },
+                {
+                    "type": "html",
+                    "id": "text_4",
+                    "label": "Test 4"
+                }
+            ]
+        },
+        {
+            "type": "personalization",
+            "name": "Personalization Field",
+            "settings": [
+                {
+                    "type": "paragraph",
+                    "content": "Display custom properties like Name Input or File Upload"
+                },
+                {
+                    "type": "select",
+                    "id": "type",
+                    "label": "Type",
+                    "default": "text",
+                    "options": [
+                        { "value": "text", "label": "Text" },
+                        { "value": "phone", "label": "Phone" },
+                        { "value": "date", "label": "Date" },
+                        { "value": "textarea", "label": "Textarea" },
+                        { "value": "file", "label": "File Upload" },
+                        { "value": "select", "label": "Select" },
+                        { "value": "checkbox", "label": "Checkbox" },
+                        { "value": "radio", "label": "Radio" }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "id": "label",
+                    "label": "Label",
+                    "default": "Your Name"
+                },
+                {
+                    "type": "text",
+                    "id": "placeholder",
+                    "label": "Placeholder",
+                    "default": "John Doe",
+                    "info": "Leavey empty to hide. This setting is only used on the types that allows it."
+                },
+                {
+                    "type": "textarea",
+                    "id": "values",
+                    "label": "Values",
+                    "default": "blue, green, white",
+                    "info": "Applies only if the type setting selected above is 'select', 'radio' or 'checkbox'"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "required",
+                    "label": "Required field",
+                    "default": true,
+                    "info": "If enabled the customer can not leave this field empty"
+                },
+                {
+                    "type": "text",
+                    "id": "maxlength",
+                    "label": "Max-length",
+                    "info": "Limit the number of characters for the input/textarea"
+                },
+                {
+                    "type": "richtext",
+                    "id": "helper_text",
+                    "label": "Helper hext",
+                    "info": "Additonal text to show below the form field."
+                }
+            ]
+        },
+        {
+            "type": "liquid_code",
+            "name": "Liquid code",
+            "settings": [
+                {
+                    "type": "select",
+                    "id": "position",
+                    "label": "Position",
+                    "options": [
+                        { "value": "before-form", "label": "Before form" },
+                        { "value": "after-form", "label": "After form" }
+                    ],
+                    "default": "before-form"
+                },
+                {
+                    "type": "liquid",
+                    "id": "liquid",
+                    "label": "HTML code",
+                    "default": "<p class=\"bg-light rounded border p-4\">Today's date: <b>{{ 'now' | date: \"%b %d, %Y\" }}</b></p>",
+                    "info": "Note: You may use both HTML and Liquid codes."
+                }
+            ]
+        },
+        {
+            "type": "value_props",
+            "name": "Value list",
+            "settings": [
+                {
+                    "type": "select",
+                    "id": "position",
+                    "label": "Position",
+                    "options": [
+                        { "value": "before-form-before-liquid", "label": "Before form before liquid" },
+                        { "value": "before-form-after-liquid", "label": "Before form after liquid" }
+                    ],
+                    "default": "before-form-before-liquid"
+                },
+                {
+                    "type": "textarea",
+                    "id": "content",
+                    "label": "add items as a list",
+                    "info": "you can also add icons example icon_name:list item"
+                }
+            ]
+        },
+        {
+            "type": "product_form",
+            "name": "Product Form",
+            "settings": []
+        },
+        {
+            "type": "product_accordian",
+            "name": "Product Tabs Wrapper",
+            "settings": []
+        },
+        {
+            "type": "show_store_availability",
+            "name": "Store availability",
+            "settings": []
+        }
+    ],
+    "templates": ["product"],
+    "presets": [
+        {
+            "name": "Product (template)",
+            "category": "Product page"
+        }
+    ]
+}
+{% endschema %}

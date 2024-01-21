@@ -1,0 +1,36 @@
+<p id="arrivalDate" class="text-body fs-8 mb-0" style="color: #D3B1C2;">
+  Estimated Arrival Date:
+  <i class="fas fa-paper-plane" style="color: #D3B1C2;"></i>
+</p>
+
+<script>
+function calculateArrivalDate() {
+    var today = new Date();
+    var minDays = 5;
+    var maxDays = 10;
+    var estimatedArrival = new Date(today);
+    estimatedArrival.setDate(today.getDate() + Math.floor(Math.random() * (maxDays - minDays + 1)) + minDays);
+    
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    var formattedArrivalDate = estimatedArrival.toLocaleDateString('en-US', options);
+    
+    var arrivalDateElement = document.getElementById("arrivalDate");
+    arrivalDateElement.innerHTML = `Estimated Arrival Date: ${formattedArrivalDate} <i class="fas fa-paper-plane" style="color: #D3B1C2;"></i>`;
+}
+
+calculateArrivalDate();
+</script>
+
+{% schema %}
+
+  {
+    "name": "ARRIVAL DATE",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

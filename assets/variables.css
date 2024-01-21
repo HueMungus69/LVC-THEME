@@ -1,0 +1,169 @@
+/*
+    © 2023 EcomGraduates.com
+    https://www.ecomgraduates.com
+*/
+
+
+
+    @font-face {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("//www.lavecchiacosmetics.com/cdn/fonts/helvetica/helvetica_n4.fe093fe9ca22a15354813c912484945a36b79146.woff2?h1=MTc2YjUyLTIuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bGF2ZWNjaGlhY29zbWV0aWNzLmNvbQ&h3=bGF2ZWNjaGlhamV3ZWxlcnMuY29t&hmac=08a51a63ee064bef102c492c1199f0882f17e3066ee93d7266c0f4188fa6805a") format("woff2"),
+       url("//www.lavecchiacosmetics.com/cdn/fonts/helvetica/helvetica_n4.8bddb85c18a0094c427a9bf65dee963ad88de4e8.woff?h1=MTc2YjUyLTIuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bGF2ZWNjaGlhY29zbWV0aWNzLmNvbQ&h3=bGF2ZWNjaGlhamV3ZWxlcnMuY29t&hmac=77e1b2ddb23ddd0895dab8646232cae6ce4e7a2eb2b85c8b93b01acd8b2b5bca") format("woff");
+}
+
+
+
+
+    @font-face {
+  font-family: Helvetica;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("//www.lavecchiacosmetics.com/cdn/fonts/helvetica/helvetica_n3.e01288c0d2e8e4f4101819b750499a38c41ed953.woff2?h1=MTc2YjUyLTIuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bGF2ZWNjaGlhY29zbWV0aWNzLmNvbQ&h3=bGF2ZWNjaGlhamV3ZWxlcnMuY29t&hmac=44467f5c3b0d0ace9c1981e22c0a2c3dddca65a1f37cdb5b312b7164be643386") format("woff2"),
+       url("//www.lavecchiacosmetics.com/cdn/fonts/helvetica/helvetica_n3.689236138e1e3e1b03386488943f79b29e240af5.woff?h1=MTc2YjUyLTIuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bGF2ZWNjaGlhY29zbWV0aWNzLmNvbQ&h3=bGF2ZWNjaGlhamV3ZWxlcnMuY29t&hmac=3fbbe5f015b98be0e039c88fc854506de7baadbbdcaa5dc076e9d9f5430754fe") format("woff");
+}
+
+    @font-face {
+  font-family: Helvetica;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("//www.lavecchiacosmetics.com/cdn/fonts/helvetica/helvetica_n7.39bee04bd277a9c4e94e2fd42d53f4e3c0afb8a5.woff2?h1=MTc2YjUyLTIuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bGF2ZWNjaGlhY29zbWV0aWNzLmNvbQ&h3=bGF2ZWNjaGlhamV3ZWxlcnMuY29t&hmac=320df64552d021309e2392e0332271edfaf98b47810353120555609c554c0593") format("woff2"),
+       url("//www.lavecchiacosmetics.com/cdn/fonts/helvetica/helvetica_n7.b95359461a6788d5549e702cb2123bc40c227e49.woff?h1=MTc2YjUyLTIuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bGF2ZWNjaGlhY29zbWV0aWNzLmNvbQ&h3=bGF2ZWNjaGlhamV3ZWxlcnMuY29t&hmac=2a043090210b9d349f9d024642ad0d4504578924d07d464991364538fcc3ea78") format("woff");
+}
+
+    @font-face {
+  font-family: Helvetica;
+  font-weight: 300;
+  font-style: oblique;
+  font-display: swap;
+  src: url("//www.lavecchiacosmetics.com/cdn/fonts/helvetica/helvetica_o3.8738cda7d30fedf1c8410fa8bf91499e05b2d370.woff2?h1=MTc2YjUyLTIuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bGF2ZWNjaGlhY29zbWV0aWNzLmNvbQ&h3=bGF2ZWNjaGlhamV3ZWxlcnMuY29t&hmac=f5e87cfd9ef3efa3f44bc3b0354d7a9b79dba47b3e7adad0d0f0ce43ff80749d") format("woff2"),
+       url("//www.lavecchiacosmetics.com/cdn/fonts/helvetica/helvetica_o3.3d948a11eabbcdbbff983bdb2311e266180be9d7.woff?h1=MTc2YjUyLTIuYWNjb3VudC5teXNob3BpZnkuY29t&h2=bGF2ZWNjaGlhY29zbWV0aWNzLmNvbQ&h3=bGF2ZWNjaGlhamV3ZWxlcnMuY29t&hmac=2294edeadcb2850a42a417c1ded9ecad12d30cd32f7accbfcf2db279b7870d2e") format("woff");
+}
+
+
+
+
+:root {
+    --bs-primary: #000000;
+    --bs-primary-rgb: 0, 0, 0;
+    --bs-primary-lighten-5: #0d0d0d;
+    --bs-primary-lighten-10: #0d0d0d;
+    --bs-primary-darken-5:  #000000;
+    --bs-primary-darken-10:  #000000;
+
+    --bs-secondary: #000000;
+    --bs-secondary-rgb: 0, 0, 0;
+    --bs-secondary-lighten-5: #0d0d0d;
+    --bs-secondary-lighten-10: #1a1a1a;
+    --bs-secondary-darken-5:  #000000;
+    --bs-secondary-darken-10:  #000000;
+
+    --bs-dark: #000000;
+    --bs-dark-rgb: 0, 0, 0;
+    --bs-dark-lighten-5: #0d0d0d;
+    --bs-dark-lighten-10: #1a1a1a;
+    --bs-dark-darken-5:  #000000;
+    --bs-dark-darken-10:  #000000;
+
+    --bs-light: #000000;
+    --bs-light-rgb: 0, 0, 0;
+    --bs-light-lighten-5: #0d0d0d;
+    --bs-light-lighten-10: #1a1a1a;
+    --bs-light-darken-5:  #000000;
+    --bs-light-darken-10:  #000000;
+
+    --bs-body-bg: #ffffff;
+    --bs-body-bg-rgb: 255, 255, 255;
+    --bs-body-color: #212529;
+    --bs-body-color-rgb: 33, 37, 41;
+
+    --bs-border-color: var(--bs-light-darken-10);
+    --bs-border-radius: 0;
+
+    --bs-link-color: var(--bs-primary);
+    --bs-link-hover-color: var(--bs-primary-darken-10);
+
+    --bs-success: #198754;
+    --bs-success-darken: #115c39;
+    --bs-success-rgb: 25, 135, 84;
+    --bs-danger: #ff3373;
+    --bs-danger-darken: #ff0050;
+    --bs-danger-rgb: 255, 51, 115;
+    --bs-warning: #000000;
+    --bs-warning-darken: #000000;
+    --bs-warning-rgb: 0, 0, 0;
+    --bs-info: #5933ff;
+    --bs-info-darken: #2600cc;
+    --bs-info-rgb: 89, 51, 255;
+
+    
+        --bs-headings-font-family: Helvetica, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif;
+        --bs-headings-font-weight: 400;
+    
+
+    
+        --bs-body-font-family:  Helvetica, sans-serif;
+    
+}
+
+
+
+body .btn {
+    letter-spacing: 0.0rem;
+    text-transform: ;
+    font-weight: 500;
+}
+
+body .btn-md {
+    --bs-btn-padding-x: 0.5rem;
+    --bs-btn-padding-y: 0.2rem;
+}
+
+body .btn-lg {
+    --bs-btn-padding-x: 0.75rem;
+    --bs-btn-padding-y: 0.3rem;
+}
+
+
+
+
+
+.form-control-md,
+.form-select-md {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+[dir="ltr"] .form-select-md {
+    padding-right: 2.5rem;
+}
+
+[dir="rtl"] .form-select-md {
+    padding-left: 2.5rem;
+}
+
+
+body .offcanvas-backdrop,
+body .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.0);
+    
+        backdrop-filter: blur(5px);
+    
+}
+
+
+
+.prefer-dark-design:root {
+    --bs-success: #81C784;
+    --bs-success-rgb: 129, 199, 132;
+    --bs-danger: #EF5350;
+    --bs-danger-rgb: 239, 83, 80;
+
+    --bs-border-color: rgba(255, 255, 255, .1);
+}

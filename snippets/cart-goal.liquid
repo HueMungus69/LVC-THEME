@@ -1,0 +1,32 @@
+{% if settings.cart_goal_enable and cart.item_count > 0 %}
+    {% liquid
+        assign goal_item_count = 0  # Set your desired item count goal
+
+        if cart.item_count < goal_item_count
+            assign percentage = cart.item_count | times: 100 | divided_by: goal_item_count
+            assign goal_remaining_items = goal_item_count | minus: cart.item_count
+            assign desc = settings.cart_goal_description_before | replace: '[amount]', goal_remaining_items
+            assign bg_color = settings.cart_goal_bg_color_before
+        else
+            assign percentage = 100
+            assign desc = settings.cart_goal_description_after
+            assign bg_color = settings.cart_goal_bg_color_after
+        endif
+    %}
+    <div id="cart-goal" class="text-center mb-5">
+        <div class="rte small mb-2 {{ color | prepend: 'text-' }}">
+            {{ desc }}
+        </div>
+        <div class="progress" style="height: .5rem;">
+            <div 
+                class="progress-bar progress-bar progress-bar-animated progress-bar-striped {{ bg_color }}" 
+                role="progressbar" 
+                aria-valuenow="{{ cart.item_count }}" 
+                aria-valuemin="0"
+                aria-valuemax="{{ goal_item_count }}"
+                data-width="{{ percentage }}%"
+                style="width: 0%;">
+            </div>
+        </div>
+    </div>
+{% endif %}
